@@ -1,5 +1,5 @@
 
-userSeconds = 1666243951#int(input("Enter a seconds: "))
+userSeconds = int(input("Enter a seconds: "))
 daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
 years =  int(userSeconds / 31536000) + 1970 # unixtime / seconds in 1 year
@@ -18,5 +18,7 @@ for i in range(len(daysInMonth)):
         break
     days -= daysInMonth[i]
 
-
-print("Day",days,":", hours + 3,":" ,int(minutes),":", seconds,".")
+if hours == 0:
+    print("Day",days,":", hours,":" ,int(minutes),":", seconds,".")
+else:
+    print("Day",days,":", hours + 3,":" ,int(minutes),":", seconds,".")
