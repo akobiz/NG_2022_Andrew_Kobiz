@@ -1,5 +1,5 @@
-alphabet = "ABCDEFGHIdecryptedCharKLMNOPQRSTUVWXYZ!,.-\" "
-cracker = "NOPQRSTUVWXYZABCDEFGHIdecryptedCharMLK!,.-\" "
+alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!,.-\" "
+cracker = "NOPQRSTUVWXYZABCDEFGHIJMLK!,.-\" "
 cryptedString = input("Enter your shiphered syntance: ")
 decryptedString = []
 
