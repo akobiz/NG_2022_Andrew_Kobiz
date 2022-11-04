@@ -44,31 +44,37 @@ def chooseFunction(string, choice):
     match choice:
         case 1:
             print("Sorted string by char: ", sortString(string.replace(" ", "")))
+            return string
         case 2:
             print("Elements in string: ", elemCount(string))
+            return string
         case 3:
             showVowalsAndConsonants(string, 0)
+            return string
         case 4:
             showVowalsAndConsonants(string, 1)
+            return string
         case 5:
             splitAndReverseString(string)
+            return string
         case 6:
             index = int(input("Enter index: "))
             print(findWordInString(string.split(" "), index))
+            return string
         case 7:
             string = askString()
             return string
         case _:
-            return None
+            print("I dont know what is an operation...")
+            return string
 
 def main():
     userChoice = 1
     stringUser = askString()
     while userChoice != 0:
         showInfo()
+        print(stringUser)
         userChoice = int(input("Choose an operation to do: "))
-        #if userChoice == 7:
-        #    stringUser = askString()
-        chooseFunction(stringUser, userChoice)
-        
+        stringUser = str(chooseFunction(stringUser, userChoice))
+
 main()
