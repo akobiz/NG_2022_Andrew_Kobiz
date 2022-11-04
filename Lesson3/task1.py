@@ -24,13 +24,14 @@ def sqrtNumbers(first, second):
     return round(sqrt(first), 2), round(sqrt(second), 2)
 
 def chooseFunction(first, second, choice):
-    if choice == 1: return plusNumbers(first, second)
-    elif choice == 2: return minusNumbers(first, second)
-    elif choice == 3: return divideNumbers(first, second)
-    elif choice == 4: return multiplyNumbers(first, second)
-    elif choice == 5: return powerNumbers(first, second)
-    elif choice == 6: return sqrtNumbers(first, second)
-    else: return None
+    match choice:
+        case 1: return plusNumbers(first, second)
+        case 2: return minusNumbers(first, second)
+        case 3: return divideNumbers(first, second)
+        case 4: return multiplyNumbers(first, second)
+        case 5: return powerNumbers(first, second)
+        case 6: return sqrtNumbers(first, second)
+        case _: return None
 
 def main():
     userChoice = 1
