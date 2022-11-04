@@ -41,19 +41,25 @@ def findWordInString(string, index):
     return string[index-1]
 
 def chooseFunction(string, choice):
-    if choice == 1:
-        print("Sorted string by char: ", sortString(string.replace(" ", "")))
-    elif choice == 2:
-        print("Elements in string: ", elemCount(string))
-    elif choice == 3:
-        showVowalsAndConsonants(string, 0)
-    elif choice == 4:
-        showVowalsAndConsonants(string, 1)
-    elif choice == 5:
-        splitAndReverseString(string)
-    elif choice == 6:
-        index = int(input("Enter index: "))
-        print(findWordInString(string.split(" "), index))
+    match choice:
+        case 1:
+            print("Sorted string by char: ", sortString(string.replace(" ", "")))
+        case 2:
+            print("Elements in string: ", elemCount(string))
+        case 3:
+            showVowalsAndConsonants(string, 0)
+        case 4:
+            showVowalsAndConsonants(string, 1)
+        case 5:
+            splitAndReverseString(string)
+        case 6:
+            index = int(input("Enter index: "))
+            print(findWordInString(string.split(" "), index))
+        case 7:
+            string = askString()
+            return string
+        case _:
+            return None
 
 def main():
     userChoice = 1
@@ -61,8 +67,8 @@ def main():
     while userChoice != 0:
         showInfo()
         userChoice = int(input("Choose an operation to do: "))
-        if userChoice == 7:
-            stringUser = askString()
+        #if userChoice == 7:
+        #    stringUser = askString()
         chooseFunction(stringUser, userChoice)
         
 main()
