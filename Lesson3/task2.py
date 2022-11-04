@@ -1,4 +1,3 @@
-from dev_log import *
 
 def showInfo():
     print("\n===============================================")
