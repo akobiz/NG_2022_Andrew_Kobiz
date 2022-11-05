@@ -27,7 +27,7 @@ def showVowalsAndConsonants(string, choice):
             for vowel in range(len(vowels)):
                 if string[char].upper() == vowels[vowel].upper():
                     break
-                if string[char].upper() != vowels[vowel].upper() and vowel + 1 == len(vowels):
+                elif string[char].upper() != vowels[vowel].upper() and vowel + 1 == len(vowels):
                     print(string[char], end='')
 
 def splitAndReverseString(string):
