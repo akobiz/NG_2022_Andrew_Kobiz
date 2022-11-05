@@ -16,19 +16,16 @@ def sortString(string):
     return sorted(string)
 
 def showVowalsAndConsonants(string, choice):
-    vowels = "AEIOUY"
-    if choice == 0:
-        for char in range(0, len(string)):
-            for vowel in range(0, len(vowels)):
-                if string[char].upper() == vowels[vowel].upper():
-                    print(string[char], end=' ')
-    elif choice == 1:
-        for char in range(len(string)):
-            for vowel in range(len(vowels)):
-                if string[char].upper() == vowels[vowel].upper():
-                    break
-                elif string[char].upper() != vowels[vowel].upper() and vowel + 1 == len(vowels):
-                    print(string[char], end='')
+    vowels = "AaEeIiOoUuYy"
+    result = []
+    match choice:
+        case 0:
+            result = [each for each in string if each in vowels]
+            print(result)
+        case 1:
+            result = [each for each in string if each not in vowels]
+            print(result)
+
 
 def splitAndReverseString(string):
     string.reverse()
@@ -46,10 +43,10 @@ def chooseFunction(string, choice):
             print("Elements in string: ", elemCount(string))
             return string
         case 3:
-            showVowalsAndConsonants(string, 0)
+            showVowalsAndConsonants(string.replace(" ", ""), 0)
             return string
         case 4:
-            showVowalsAndConsonants(string, 1)
+            showVowalsAndConsonants(string.replace(" ", ""), 1)
             return string
         case 5:
             splitAndReverseString(string.split(" "))
