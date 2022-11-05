@@ -1,15 +1,13 @@
-
-def showInfo():
+def showInfo(stringUser):
     print("\n===============================================")
     print("1.Sort string.\n2.Calculate count of all elements in string\n" \
         "3.Show vowal chars in string.\n4.Show consonants chars in string\n" \
             "5.Split and show reversed string.\n6.Show word by index.\n" \
                 "7.Enter string again.\n0.Exit")
-    print("===============================================\n")
+    print("===============================================\nYour string: " + stringUser)
 
 def askString():
-    stringUser = input("Enter your string: ")
-    return stringUser
+    return input("Enter your string: ")
 
 def elemCount(string):
     return len(string)
@@ -29,13 +27,12 @@ def showVowalsAndConsonants(string, choice):
             for vowel in range(len(vowels)):
                 if string[char].upper() == vowels[vowel].upper():
                     break
-                elif string[char].upper() != vowels[vowel].upper() and vowel + 1 == len(vowels):
+                if string[char].upper() != vowels[vowel].upper() and vowel + 1 == len(vowels):
                     print(string[char], end='')
 
 def splitAndReverseString(string):
-    string = string.split(" ")
-    for word in reversed(string):
-        print(word, end=' ')
+    string.reverse()
+    print(" ".join(string))
         
 def findWordInString(string, index):
     return string[index-1]
@@ -55,7 +52,7 @@ def chooseFunction(string, choice):
             showVowalsAndConsonants(string, 1)
             return string
         case 5:
-            splitAndReverseString(string)
+            splitAndReverseString(string.split(" "))
             return string
         case 6:
             index = int(input("Enter index: "))
@@ -72,9 +69,8 @@ def main():
     userChoice = 1
     stringUser = askString()
     while userChoice != 0:
-        showInfo()
-        print(stringUser)
+        showInfo(stringUser)
         userChoice = int(input("Choose an operation to do: "))
-        stringUser = str(chooseFunction(stringUser, userChoice))
+        stringUser = chooseFunction(stringUser, userChoice)
 
 main()
