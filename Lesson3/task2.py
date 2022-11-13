@@ -38,29 +38,22 @@ def chooseFunction(string, choice):
     match choice:
         case 1:
             print("Sorted string by char: ", sortString(string.replace(" ", "")))
-            return string
         case 2:
             print("Elements in string: ", elemCount(string))
-            return string
         case 3:
             showVowalsAndConsonants(string.replace(" ", ""), 0)
-            return string
         case 4:
             showVowalsAndConsonants(string.replace(" ", ""), 1)
-            return string
         case 5:
             splitAndReverseString(string.split(" "))
-            return string
         case 6:
             index = int(input("Enter index: "))
             print(findWordInString(string.split(" "), index))
-            return string
         case 7:
             string = askString()
-            return string
         case _:
             print("I dont know what is an operation...")
-            return string
+    return string
 
 def main():
     userChoice = 1
