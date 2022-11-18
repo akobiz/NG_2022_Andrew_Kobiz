@@ -9,12 +9,6 @@ def showInfo(stringUser):
 def askString():
     return input("Enter your string: ")
 
-def elemCount(string):
-    return len(string)
-
-def sortString(string):
-    return sorted(string)
-
 def showVowalsAndConsonants(string, choice):
     vowels = "AaEeIiOoUuYy"
     result = []
@@ -37,9 +31,9 @@ def findWordInString(string, index):
 def chooseFunction(string, choice):
     match choice:
         case 1:
-            print("Sorted string by char: ", sortString(string.replace(" ", "")))
+            print("Sorted string by char: ", sorted(string.replace(" ", "")))
         case 2:
-            print("Elements in string: ", elemCount(string))
+            print("Elements in string: ", len(string))
         case 3:
             showVowalsAndConsonants(string.replace(" ", ""), 0)
         case 4:
